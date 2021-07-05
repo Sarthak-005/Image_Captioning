@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Image Captioning</title>
+</head>
+<body>
+    <h1>HTML PAGE</h1>
+    {% for f in my_friends %} 
+    <h3>{{f}}</h3>
+    {% endfor %}
+    <form action="/", method="POST" enctype='multipart/form-data'>
+        <input type='file' name='userfile' placeholder="your img">
+        <input type="submit" name="">
+    </form>
+    
+    {% if ur_cap %}
+    <img src="{{ ur_cap['image'] }}" width="50%" height="50%" >
+    <h1> Caption : <i>{{ ur_cap['caption'] }}</i> </h1>
+    {% endif %}
+</body>
+</html>
